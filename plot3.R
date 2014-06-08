@@ -30,15 +30,19 @@ rm("Filter","Date_Time")
 
 
 ##Plot3
+## seting general setting to graphics
 par(mfrow = c(1, 1), mar = c(1.5, 4,1, 1), oma = c(1, 0.5, 0, 0), bg = "transparent")
+## plot Sub_metering_1
 plot( hpc$Date_Time , hpc$Sub_metering_1, type = "l", xlab = "", ylab = "Energy Sub Metering")
+## using points func to add Sub_metering_2 over Date_time plot 
 points(hpc$Date_Time , hpc$Sub_metering_2, type = "l", col = "red")
+## using points func to add Sub_metering_3 over Date_time plot 
 points(hpc$Date_Time , hpc$Sub_metering_3, type = "l", col = "blue")
 legend("topright",cex=0.7, lty = c(1,1,1), col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 ## Copy my plot to a PNG file
 ##the default width is 480 and height is 480 see ?png
-dev.copy(png, file = "plot3.png", width =550) 
+dev.copy(png, file = "plot3.png")
 ## close the PNG device!
 dev.off() 
 

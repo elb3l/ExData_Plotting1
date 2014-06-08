@@ -30,7 +30,9 @@ rm("Filter","Date_Time")
 
 
 ##Plot2
+## seting general setting to graphics
 par(mfrow = c(1, 1), mar = c(1.5, 4,1, 1), oma = c(1, 0.5, 0, 0), bg = "transparent")
+## using the plot func to plot Global_active_power over Date_Time type linear
 plot( hpc$Date_Time , hpc$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
 ## Copy my plot to a PNG file

@@ -29,7 +29,9 @@ hpc<-cbind(Date_Time,hpc[,3:9])
 rm("Filter","Date_Time")
 
 ##Plot1
-par(mfrow = c(1, 1), mar = c(4, 4,1, 1), oma = c(1, 0.5, 0, 0), bg = "transparent",cex = 0.8)
+## seting general setting to graphics
+par(mfrow = c(1, 1), mar = c(4, 4,1, 1), oma = c(1, 0.5, 0, 0), bg = "transparent")
+## using the histogram func to plot Global_active_power
 hist(hpc$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
 
 ## Copy my plot to a PNG file

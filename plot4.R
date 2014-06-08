@@ -30,29 +30,38 @@ rm("Filter","Date_Time")
 
 
 ##Plot4
+## seting general setting to graphics
 par(mfrow = c(2, 2), mar = c(4, 4,1, 1), bg = "transparent")
+
 with(hpc, {
+        ##Plot4.1
+        ## using the plot func to plot Global_active_power over Date_Time type linear
         plot( hpc$Date_Time , hpc$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power")
         
         
         ##Plot4.2
+        ## using the plot func to plot Voltage over Date_Time type linear
         plot( hpc$Date_Time , hpc$Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
         
         ##Plot4.3
+        ## plot Sub_metering_1
         plot( hpc$Date_Time , hpc$Sub_metering_1, type = "l", xlab = "", ylab = "Energy Sub Metering")
+        ## using points func to add Sub_metering_2 over Date_time plot 
         points(hpc$Date_Time , hpc$Sub_metering_2, type = "l", col = "red")
+        ## using points func to add Sub_metering_3 over Date_time plot 
         points(hpc$Date_Time , hpc$Sub_metering_3, type = "l", col = "blue")
         legend("topright",cex=0.6,bty = "n",lwd = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
         
         
+        
         ##Plot4.4
-        ##par(mfrow = c(1, 1), mar = c(1.5, 4,1, 1), oma = c(1, 0.5, 0, 0))
+        ## using the plot func to plot Global_reactive_power over Date_Time type linear
         plot( hpc$Date_Time , hpc$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
         
 })
 
 ## Copy my plot to a PNG file
 ##the default width is 480 and height is 480 see ?png
-dev.copy(png, file = "plot4.png", width =550) 
+dev.copy(png, file = "plot4.png") 
 ## close the PNG device!
 dev.off() 
